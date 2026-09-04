@@ -10,4 +10,17 @@ public class Recursividad {
         }
         return caracterApareceAntes(cad.substring(1), c1, c2);
     }
+
+    public static int localizarYSumar(String cadena){
+
+        if (cadena == null || cadena.isEmpty()) {
+            return 0;
+        }
+        int suma = 0;
+        char actual = cadena.charAt(0);
+        if(actual >= '0' && actual <= '9' ){
+            suma = actual - '0';
+        }
+        return suma + localizarYSumar(cadena.substring(1));
+    }
 }
