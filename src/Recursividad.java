@@ -1,15 +1,6 @@
 
 public class Recursividad {
-
-    public static boolean caracterApareceAntes(String cad, char c1, char c2){
-        if (cad == null || cad.length() < 2) {
-            return false;
-        }
-        if (cad.charAt(0) == c1 && cad.charAt(1) == c2) {
-            return true;
-        }
-        return caracterApareceAntes(cad.substring(1), c1, c2);
-    }
+    
 
     public static int localizarYSumar(String cadena){
 
@@ -22,5 +13,14 @@ public class Recursividad {
             suma = actual - '0';
         }
         return suma + localizarYSumar(cadena.substring(1));
+    }
+
+    public static int buscarXEnCadena(int[] cadenaNumeros, int numeroAEncontrar, int posicion){
+        if(cadenaNumeros.length == posicion) {
+            return -1;
+        } else if(cadenaNumeros[posicion] == numeroAEncontrar){
+            return numeroAEncontrar;
+        }
+        return buscarXEnCadena(cadenaNumeros, numeroAEncontrar,posicion + 1);
     }
 }
